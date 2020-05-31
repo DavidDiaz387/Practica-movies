@@ -1,0 +1,37 @@
+<%-include('partials/header.ejs') %>
+<h1>Crear Pelicula</h1>
+<form action="/peliculas/crear" method="post">
+  <div>
+    <label for="">titulo</label>
+    <input type="text" name="titulo" id="">
+  </div>
+  <div>
+    <label for="">Premios</label>
+    <input type="text" name="premios" id="" />
+  </div>
+  <div>
+    <label for="">Duracion</label>
+    <input type="text" name="duracion" id="" />
+  </div>
+  <div>
+    <label for="">Rating</label>
+    <input type="text" name="rating" id="" />
+  </div>
+  <div>
+    <label for="">Fecha de estreno</label>
+    <input type="date" name="fecha_estreno" id="" />
+  </div>
+  <div>
+    <label for="">Genero</label>
+    <select name="genero">
+      <% for(let i = 0; i < generos.length; i++){ %>
+      <option value="<%= generos[i].id %> ">
+        <%= generos[i].name %>
+      </option>
+      <% } %>
+    </select>
+  </div>
+  <button type="submit">Crear</button>
+</form>
+
+<%-include('partials/footer.ejs') %>
